@@ -1,0 +1,21 @@
+# Markdown TODO list
+
+Searching folder: **/Users/mitch/Dev/wave-v2/**
+Extensions: ['.py', '.txt']
+Recursive search: True
+  
+Found **4** items in **3** files
+- - -
+
+#### /Users/mitch/Dev/wave-v2/scripts/convert.py
+    67: # TODO: Test for all spots
+    85: # TODO: Add other optional fields:
+
+#### /Users/mitch/Dev/wave-v2/video_spot/admin.py
+    77: # TODO: Move to storage app?
+
+#### /Users/mitch/Dev/wave-v2/wave_v2/urls.py
+    9: # TODO testing
+
+- - -
+*Generated 2013-08-17 17:32:44.805939*

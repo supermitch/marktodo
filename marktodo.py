@@ -12,7 +12,8 @@ def argparse():
                     help='folder to search')
     parser.add_argument('-r', action='store_true', default=False,
                     help='recursive folder search')
-    parser.add_argument('-o', metavar='out-file', type=argparse.FileType('wt'),
+    parser.add_argument('-o', metavar='out-file', default='todo.mkd',
+                    type=argparse.FileType('wt'),
                     help='output file (default is todo.mkd)')
     parser.add_argument('-e', nargs='*', dest='ext',
                     help='file extensions to search')
@@ -82,9 +83,11 @@ def find_todos(filename):
     return todos
 
 
-def print_todos(out_file, todos):
+def print_todos(args, todos):
 
     from datetime import datetime
+
+    out_file = args.o
 
     file_count = len(todos)
     total_count = 0
@@ -93,20 +96,22 @@ def print_todos(out_file, todos):
     
     with out_file as f:
         f.write('# Markdown TODO list\n\n')
+        f.write('Searching folder: **{}**\n'.format(args.f))
+        f.write('Extensions: {}\n'.format(args.ext))
+        f.write('Recursive search: {}\n'.format(args.r))
+        f.write('  \n')
         f.write('Found **{0}** items in **{1}** files\n'
                     ''.format(total_count, file_count))
         f.write('- - -\n')
         f.write('\n')
         for file_todos in todos:
-            print(file_todos)
             file_name = file_todos[0][0]
-            f.write('#### File: {}\n'.format(file_name))
+            f.write('#### {}\n'.format(file_name))
             for f_name, line_no, raw_line, clean in file_todos:
                 f.write('    {0}: {1}\n'.format(line_no, clean))
 
             f.write('\n')
         f.write('- - -\n')
-        print(datetime.now())
         f.write('*Generated {}*'.format(str(datetime.now())))
 
 
@@ -121,8 +126,7 @@ def main():
         if file_todos:
             todos.append(file_todos)
     
-    print(todos)
-    print_todos(args.o, todos)
+    print_todos(args, todos)
 
 
 if __name__=='__main__':
