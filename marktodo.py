@@ -10,7 +10,7 @@ def argparse():
 
     parser.add_argument('-f',
                     help='folder to search')
-    parser.add_argument('-r', action='store_true', default=False,
+    parser.add_argument('-r', action='store_false', default=True,
                     help='recursive folder search')
     parser.add_argument('-o', metavar='out-file', default='todo.mkd',
                     type=argparse.FileType('wt'),
@@ -98,7 +98,7 @@ def print_todos(args, todos):
         f.write('# Markdown TODO list\n\n')
         f.write('Searching folder: **{}**  \n'.format(args.f))
         f.write('Recursive search: **{}**  \n'.format(args.r))
-        f.write('Extensions: **{}**  \n'.format(', '.join(args.ext)))
+        f.write('Extensions: **{}**  \n'.format('**, **'.join(args.ext)))
         f.write('  \n')
         f.write('Found **{0}** items in **{1}** files\n'
                     ''.format(total_count, file_count))
