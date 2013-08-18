@@ -1,0 +1,16 @@
+# Markdown TODO list
+
+**Found 4 items in 3 files**
+- - -
+
+### File: /Users/mitch/Dev/wave-v2/scripts/convert.py
+    67: # TODO: Test for all spots
+    85: # TODO: Add other optional fields:
+
+### File: /Users/mitch/Dev/wave-v2/video_spot/admin.py
+    77: # TODO: Move to storage app?
+
+### File: /Users/mitch/Dev/wave-v2/wave_v2/urls.py
+    9: # TODO testing
+
+eof
