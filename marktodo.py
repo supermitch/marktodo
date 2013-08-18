@@ -84,6 +84,8 @@ def find_todos(filename):
 
 def print_todos(out_file, todos):
 
+    from datetime import datetime
+
     file_count = len(todos)
     total_count = 0
     for file_todos in todos:
@@ -91,19 +93,21 @@ def print_todos(out_file, todos):
     
     with out_file as f:
         f.write('# Markdown TODO list\n\n')
-        f.write('**Found {0} items in {1} files**\n'
+        f.write('Found **{0}** items in **{1}** files\n'
                     ''.format(total_count, file_count))
         f.write('- - -\n')
         f.write('\n')
         for file_todos in todos:
             print(file_todos)
             file_name = file_todos[0][0]
-            f.write('### File: {}\n'.format(file_name))
+            f.write('#### File: {}\n'.format(file_name))
             for f_name, line_no, raw_line, clean in file_todos:
                 f.write('    {0}: {1}\n'.format(line_no, clean))
 
             f.write('\n')
-        f.write('eof')
+        f.write('- - -\n')
+        print(datetime.now())
+        f.write('*Generated {}*'.format(str(datetime.now())))
 
 
 def main():
