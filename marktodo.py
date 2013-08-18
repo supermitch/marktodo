@@ -1,7 +1,5 @@
 import os
 
-DEBUG = True
-
 def argparse():
     """ Returns an arguments namespace. """
     import argparse
@@ -84,7 +82,7 @@ def find_todos(filename):
 
 
 def print_todos(args, todos):
-
+    """ Does the printing of todo list to markdown file. """
     from datetime import datetime
 
     out_file = args.o
