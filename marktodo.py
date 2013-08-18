@@ -97,8 +97,8 @@ def print_todos(args, todos):
     with out_file as f:
         f.write('# Markdown TODO list\n\n')
         f.write('Searching folder: **{}**\n'.format(args.f))
-        f.write('Extensions: {}\n'.format(args.ext))
-        f.write('Recursive search: {}\n'.format(args.r))
+        f.write('Recursive search: **{}**\n'.format(args.r))
+        f.write('Extensions: **{}**\n'.format(', '.join(args.ext)))
         f.write('  \n')
         f.write('Found **{0}** items in **{1}** files\n'
                     ''.format(total_count, file_count))

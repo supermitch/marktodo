@@ -1,8 +1,8 @@
 # Markdown TODO list
 
 Searching folder: **/Users/mitch/Dev/wave-v2/**
-Extensions: ['.py', '.txt']
-Recursive search: True
+Recursive search: **True**
+Extensions: **.py, .txt**
   
 Found **4** items in **3** files
 - - -
@@ -18,4 +18,4 @@ Found **4** items in **3** files
     9: # TODO testing
 
 - - -
-*Generated 2013-08-17 17:32:44.805939*
+*Generated 2013-08-17 17:36:35.585318*
